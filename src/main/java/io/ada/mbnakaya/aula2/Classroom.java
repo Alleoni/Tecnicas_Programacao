@@ -24,6 +24,8 @@ public class Classroom {
         showChallengeOne();
         showZonedDateTime();
         showTemporalAdjusters();
+        showPeriodDurationAndInstant();
+        showChallengeTwo();
     }
 
     /**
@@ -130,7 +132,9 @@ public class Classroom {
      * Obs: podemos combinar as operações anteriores, como plus(), com as classes de período, duração e instante.
      */
     private static void showPeriodDurationAndInstant() {
-        
+        Period period = Period.between(LocalDate.of(2020,1,1), LocalDate.now());
+        System.out.println("Periodo Passado: " + period.toTotalMonths());
+
     }
 
     /**
@@ -144,9 +148,14 @@ public class Classroom {
      * Challenge Two: use o stdout para imprimir a duração de execução do método abaixo.
      */
     private static void showChallengeTwo() {
+        Instant inicio = Instant.now();
         for (int i = 0; i < 100; i++) {
             System.out.println("Execução de número: " + i);
         }
+        Instant fim = Instant.now();
+        Duration duracao = Duration.between(inicio,fim);
+        long duracaoEmMilisSegundos = duracao.toMillis();
+        System.out.println(duracaoEmMilisSegundos);
     }
 
     /**
