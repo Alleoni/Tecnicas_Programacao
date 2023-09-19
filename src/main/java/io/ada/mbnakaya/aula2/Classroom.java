@@ -27,6 +27,7 @@ public class Classroom {
         showTemporalAdjusters();
         showPeriodDurationAndInstant();
         showChallengeTwo();
+        showDaylightSavings();
     }
 
     /**
@@ -142,7 +143,6 @@ public class Classroom {
         long result = ChronoUnit.MINUTES.between(LocalTime.now(), LocalTime.of(23,10,54));
         System.out.println("Minutes Between" + result);
 
-
     }
 
     /**
@@ -150,6 +150,10 @@ public class Classroom {
      * foi alterado devido ao horário de verão.
      */
     private static void showDaylightSavings() {
+        ZoneId sp = ZoneId.of("America/Sao_Paulo");
+        boolean isDayLightSavings = sp.getRules().isDaylightSavings(
+                ZonedDateTime.of(LocalDate.of(2019,1,10),LocalTime.now(), sp).toInstant());
+        System.out.println("É horário de verão? " + isDayLightSavings);
     }
 
     /**
