@@ -6,6 +6,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.format.TextStyle;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Locale;
@@ -134,6 +135,13 @@ public class Classroom {
     private static void showPeriodDurationAndInstant() {
         Period period = Period.between(LocalDate.of(2020,1,1), LocalDate.now());
         System.out.println("Periodo Passado: " + period.toTotalMonths());
+
+        Period twoDays = Period.ofDays(2);
+        System.out.println("Dois dias depois: " + LocalDate.now().plus(twoDays));
+
+        long result = ChronoUnit.MINUTES.between(LocalTime.now(), LocalTime.of(23,10,54));
+        System.out.println("Minutes Between" + result);
+
 
     }
 
