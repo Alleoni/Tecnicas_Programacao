@@ -76,7 +76,7 @@ public class ClassroomPt2 {
             if (y) return Optional.empty();
             else return Optional.of(x);
         };
-        Optional<Integer> optionalOk = optFunction.apply(10, false);
+        Optional<Integer> optionalOk = optFunction.apply(20, false);
         Optional<Integer> optionalNOk = optFunction.apply(10, true);
 
         System.out.println(optionalOk.get());   // .get() pode ser substituído por .orElseThrow()
