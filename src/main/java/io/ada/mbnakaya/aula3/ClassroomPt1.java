@@ -14,8 +14,11 @@ public class ClassroomPt1 {
 
         // f(x) = x * 3
         // f(5) = 5 * 3 = 15
-        Predicate<Animal> testarAndador = animal -> animal.podeAndar();
-        Predicate<Animal> testarVoador = animal -> animal.podeVoar();
+        Predicate<Animal> testarAndador = x -> x.podeAndar(); //Declarando uma função atribuindo ela a um objeto. Retorno de predicate será sempre booleano.
+        Predicate<Animal> testarVoador = x -> x.podeAndar();
+        Predicate<Animal> testarQuemNaoFazNada = x -> !x.podeAndar() && !x.podeVoar();
+        //Predicate<Animal> testarAndador = animal -> animal.podeAndar(); // Predicate - Interface funcional para testar
+        //Predicate<Animal> testarVoador = animal -> animal.podeVoar();
 
         System.out.println("Estes andam:");
         imprime(animais, testarAndador);
@@ -24,11 +27,17 @@ public class ClassroomPt1 {
 
         System.out.println("Estes voam:");
         imprime(animais, testarVoador);
+
+        System.out.println("\n");
+
+        System.out.println("Este não faz nada: ");
+        imprime(animais, testarQuemNaoFazNada);
+
     }
 
-    private static void imprime(List<Animal> animais, Predicate<Animal> validador) {
+    private static void imprime(List<Animal> animais, Predicate<Animal> testador) {
         for (Animal animal : animais) {
-            if (validador.test(animal)) {
+            if (testador.test(animal)) {
                 System.out.println(animal.getEspecie());
             }
         }

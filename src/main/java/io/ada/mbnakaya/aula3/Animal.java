@@ -12,9 +12,15 @@ public class Animal {
         this.podeVoar = podeVoar;
     }
 
-    public String getEspecie() { return especie; }
+    public String getEspecie() {
+        return especie;
+    }
 
-    public Boolean podeAndar() { return podeAndar; }
+    public Boolean podeAndar() {
+        return podeAndar;
+    }
 
-    public Boolean podeVoar() { return podeVoar; }
+    public Boolean podeVoar() {
+        return podeVoar;
+    }
 }
