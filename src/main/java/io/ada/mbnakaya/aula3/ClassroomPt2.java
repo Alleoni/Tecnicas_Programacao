@@ -53,7 +53,7 @@ public class ClassroomPt2 {
         System.out.println(function.apply(5));
 
         BiFunction<Integer, Integer, Boolean> biFunction = (x,y) -> x > y;
-        System.out.println(biFunction.apply(10, 3));
+        System.out.println(biFunction.apply(2, 3));
 
         /*
          * Recebe um argumento de um tipo e retorna o mesmo tipo, de forma análoga ao Function.
@@ -61,7 +61,7 @@ public class ClassroomPt2 {
          * UnaryOperator<T> ==> T apply(T)
          */
         UnaryOperator<Integer> unary = x -> x + 10;
-        System.out.println(unary.apply(5));
+        System.out.println(unary.apply(11));
 
         BinaryOperator<Integer> binaryOperator = (x,y) -> x * y;
         System.out.println(binaryOperator.apply(10, 6));
