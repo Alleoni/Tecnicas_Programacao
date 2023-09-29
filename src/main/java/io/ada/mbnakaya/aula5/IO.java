@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.FileAttribute;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 import static java.nio.file.StandardOpenOption.CREATE;
 
@@ -46,6 +48,20 @@ public class IO {
         Path fromFile = arquivoIO.toPath();
 
         // DESAFIO 1: Imprime se existir (utilizando interface funcional)
+        Path desafio1 = Path.of("src/main/resources/test.txt");
+
+        // Forma 1
+        if (desafio1.toFile().exists()) System.out.println(desafio1);
+
+        //Forma 2
+        Stream.of(desafio1.toFile()).filter(File::exists).forEach(System.out::println);
+
+        // Forma 3
+        Stream.of(desafio1.toFile()).filter(file -> file.exists()).forEach(file -> System.out.println(file));
+
+
+        System.out.println("HELLO");
+
         // ...
 
         // subpath(int beginIndex, int endIndex)
