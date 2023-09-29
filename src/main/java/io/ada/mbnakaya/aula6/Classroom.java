@@ -1,5 +1,6 @@
 package io.ada.mbnakaya.aula6;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -27,11 +28,16 @@ public class Classroom {
         // createDirectory(Path dir, FileAttributes<?>... attrs)
         // Equivalente ao mkdir() do File
 //        Files.createDirectories(Path.of("src/main/resources/teste"));
+        File file = new File("src/main/resources/test-mkdir");
+        Files.createDirectories(file.toPath().resolve("files"));
+
 
         // Copiar arquivo/diretório
         // copy(Path source, OutputStream out)
         // copy(Path source, Path target, CopyOption... options)
         // copy(InputStream in, Path target, CopyOption... options)
+
+
 
         // Mover arquivo/diretório
         // move(Path source, Path target, CopyOption... options)
